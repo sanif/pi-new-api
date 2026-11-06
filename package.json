@@ -1,0 +1,63 @@
+{
+  "name": "@sanif/pi-new-api",
+  "version": "0.1.0",
+  "description": "Use a self-hosted New API gateway in Pi: log in with a team key, discover its models, and check your quota.",
+  "type": "module",
+  "main": "index.ts",
+  "files": [
+    "index.ts",
+    "newapi.ts",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "pi-provider",
+    "new-api",
+    "llm-gateway",
+    "team",
+    "developer-tools"
+  ],
+  "author": {
+    "name": "Sanif",
+    "email": "sanifss@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanif/pi-new-api.git"
+  },
+  "homepage": "https://github.com/sanif/pi-new-api#readme",
+  "bugs": {
+    "url": "https://github.com/sanif/pi-new-api/issues"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "packageManager": "bun@1.3.14",
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "pack:check": "bun pm pack --dry-run",
+    "verify": "bun run typecheck && bun test && bun run pack:check",
+    "prepublishOnly": "bun run verify"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "1.4.0",
+    "@types/bun": "^1.3.14",
+    "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
